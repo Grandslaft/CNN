@@ -1,0 +1,2 @@
+# CNN
+CNN with SGD
