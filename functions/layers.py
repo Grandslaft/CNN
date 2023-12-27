@@ -153,7 +153,7 @@ class MaxPool:
     def backward(self, out_prev, learning_rate):
         # clipping value in the input if value are extreme big or small,
         # so it won't return NaN values while calculating back-propagation
-        out_prev = np.clip(out_prev, -1e+5, 1e+5)
+        np.clip(out_prev, -1e+50, 1e+50, out=out_prev)
         
         # output array
         out_next = np.zeros(self.last_input.shape)
