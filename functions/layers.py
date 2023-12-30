@@ -1,6 +1,7 @@
 import numpy as np
-from activation_functions import Activation
-from time_wrapper import calculate_execution_time
+from .activation_functions import Activation
+from .time_wrapper import calculate_execution_time
+from .layers import *
 
 class Conv:
 
@@ -105,10 +106,10 @@ class MaxPool:
     def __init__(self, size = 2, stride = 2):
         # pointer to the next layer
         self.next_layer = None
-        # step through image when using Pool
-        self.stride = stride
         # Pool size or patch size, where we will look for max value
         self.size = size
+        # step through image when using Pool
+        self.stride = stride
 
     def add_layer(self, child):
         self.next_layer = child
@@ -180,7 +181,7 @@ class MaxPool:
         return out_next
 
 class FCL:
-    def __init__(self, n_inputs, n_neurons, activation):
+    def __init__(self, n_inputs = 10, n_neurons = 2, activation = 'relu'):
         self.next_layer = None
         # Setting weights and biases as random variables with 
         # a normal distribution divided by 10
