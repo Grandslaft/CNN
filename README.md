@@ -1,2 +1,2 @@
 # CNN
-CNN using SGD with early stop which compare difference of local minimum in 'patience' window and a global maximum, and compare it with min_delta to see if changes are over this min value, if not we stop execution and restore best weights if needed. Also there's an option to set minimal desired accuracy or loss.
+A CNN using SGD with early stopping compares the difference between the local minimum within a ‘patience’ window and a global maximum. It then compares this difference with min_delta to determine if the changes exceed this minimum value. If not, the execution stops, and the best weights are restored if needed. Additionally, there is an option to set a minimum desired accuracy or loss.
